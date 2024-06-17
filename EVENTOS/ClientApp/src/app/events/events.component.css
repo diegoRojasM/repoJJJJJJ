@@ -1,0 +1,42 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  /* Estilos de la tarjeta de evento */
+  .event-card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .event-card h3 {
+    margin-top: 0;
+  }
+  
+  .event-card p {
+    margin-bottom: 10px;
+  }
+  
+  .event-card button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .event-card button:hover {
+    background-color: #45a049;
+  }

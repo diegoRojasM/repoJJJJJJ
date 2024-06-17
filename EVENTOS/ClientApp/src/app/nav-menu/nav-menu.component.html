@@ -1,0 +1,5 @@
+<nav *ngIf="isLoggedIn()">
+  <a routerLink="/events">Eventos</a>
+  <a routerLink="/create-event">Crear Evento</a>
+  <button (click)="logout()">Cerrar secion</button>
+</nav>

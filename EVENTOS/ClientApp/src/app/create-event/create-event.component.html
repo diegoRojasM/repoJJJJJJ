@@ -1,0 +1,39 @@
+<h2>Create Event</h2>
+<button (click)="createIndividualEvent()">Crear evento Individual</button>
+<button (click)="createGroupEvent()">Crear evento Grupal</button>
+
+<form *ngIf="isCreatingEvent" (ngSubmit)="createEvent()">
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  <div>
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" [(ngModel)]="event.name" name="name" required>
+  </div>
+  <div>
+    <label for="description">Descripcion:</label>
+    <textarea id="description" [(ngModel)]="event.description" name="description" required></textarea>
+  </div>
+  <div>
+    <label for="location">Locacion:</label>
+    <input type="text" id="location" [(ngModel)]="event.location" name="location" required>
+  </div>
+  <div>
+    <label for="contactInfo">Contacto:</label>
+    <input type="text" id="contactInfo" [(ngModel)]="event.contactInfo" name="contactInfo" required>
+  </div>
+  <div>
+    <label for="startDate">Fecha de inicio:</label>
+    <input type="date" id="startDate" [(ngModel)]="event.startDate" name="startDate" required>
+  </div>
+  <div>
+    <label for="endDate">fecha de fin:</label>
+    <input type="date" id="endDate" [(ngModel)]="event.endDate" name="endDate" required>
+  </div>
+  <button type="submit">Registrar evento</button>
+</form>
+
+<style>
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+</style>

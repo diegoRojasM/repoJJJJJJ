@@ -1,0 +1,52 @@
+<h2>{{ event?.name }}</h2>
+<p>{{ event?.description }}</p>
+<p>{{ event?.location }}</p>
+<p>{{ event?.contactInfo }}</p>
+<p>Start Date: {{ event?.startDate | date }}</p>
+<p>End Date: {{ event?.endDate | date }}</p>
+<p>Type: {{ event?.isTeamEvent ? 'Team Event' : 'Individual Event' }}</p>
+
+<h3>Register as Participant</h3>
+<form (ngSubmit)="registerForEvent()">
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="participant.name" name="name" required>
+  </div>
+  <div>
+    <label for="address">Address:</label>
+    <input type="text" id="address" [(ngModel)]="participant.address" name="address" required>
+  </div>
+  <div>
+    <label for="dateOfBirth">Date of Birth:</label>
+    <input type="date" id="dateOfBirth" [(ngModel)]="participant.dateOfBirth" name="dateOfBirth" required>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" [(ngModel)]="participant.email" name="email" required>
+  </div>
+  <div>
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" id="phoneNumber" [(ngModel)]="participant.phoneNumber" name="phoneNumber" required>
+  </div>
+  <div>
+    <label for="organization">Organization:</label>
+    <input type="text" id="organization" [(ngModel)]="participant.organization" name="organization" required>
+  </div>
+  <div>
+    <label for="profession">Profession:</label>
+    <input type="text" id="profession" [(ngModel)]="participant.profession" name="profession" required>
+  </div>
+  <div>
+    <label for="position">Position:</label>
+    <input type="text" id="position" [(ngModel)]="participant.position" name="position" required>
+  </div>
+  <button type="submit">Register</button>
+</form>
+
+<style>
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+</style>
